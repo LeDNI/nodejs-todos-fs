@@ -1,5 +1,5 @@
 import { ReleaseInfos } from "../../../../../shared/release";
-import { TypedResponse } from "../express.d";
+import { TypedResponse } from "../models/express";
 import { InMememoryStore } from "../store/InMemoryStore";
 
 declare module "express" {

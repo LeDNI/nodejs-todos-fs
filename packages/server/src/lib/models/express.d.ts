@@ -1,3 +1,10 @@
+declare module "express-session" {
+  interface SessionData {
+    page_views?: number;
+    store_todos?: InMememoryTodoStore;
+  }
+}
+
 import { Send } from "express-serve-static-core";
 export interface TypedResponse<ResBody> extends Express.Response {
   json: Send<ResBody, this>;

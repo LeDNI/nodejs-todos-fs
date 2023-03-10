@@ -1,8 +1,9 @@
-import { getApi } from "./lib/getApi";
+import { setExpressApi } from "./lib/setExpressApi";
 import http from "http";
 import dotenv from "dotenv";
 import { InMememoryStore } from "./lib/store/InMemoryStore";
 import { InMememoryTodoStore } from "./lib/store/InMemoryTodoStore";
+import { getExpressApp } from "./lib/getExpressApp";
 
 dotenv.config({ path: "./config.env" });
 
@@ -14,8 +15,11 @@ dotenv.config({ path: "./config.env" });
   await storeTodos.initialize();
 
   const port = process.env.PORT || 3_000;
-  const api = await getApi(store, storeTodos);
-  const server = http.createServer(api);
+  const expressApp = await getExpressApp();
+
+  await setExpressApi(expressApp, store, storeTodos);
+
+  const server = http.createServer(expressApp);
 
   server.listen(port, () => {
     console.log(
