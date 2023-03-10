@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 // import { TypedRequestQuery, TypedResponse } from "../express";
-import { TypedRequestQuery } from "../express";
+import { TypedRequestQuery } from "../models/express";
 import { InMememoryTodoStore } from "../store/InMemoryTodoStore";
 
 const markTodoAsDone = (store: InMememoryTodoStore) => {

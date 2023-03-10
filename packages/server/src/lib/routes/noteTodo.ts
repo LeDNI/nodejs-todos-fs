@@ -1,5 +1,5 @@
 import { Todos } from "../../../../../shared/todo";
-import { TypedRequestBody, TypedResponse } from "../express";
+import { TypedRequestBody, TypedResponse } from "../models/express";
 import { InMememoryTodoStore } from "../store/InMemoryTodoStore";
 import { createTodo } from "../todo/createTodo";
 
