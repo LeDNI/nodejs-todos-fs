@@ -1,0 +1,10 @@
+# /node_modules/* ignored by default
+
+# Ignore built files
+dist/*
+docs/*
+packages/server/dist/*
+
+# Ignore config files written via cli tools
+package.json
+tsconfig.json
