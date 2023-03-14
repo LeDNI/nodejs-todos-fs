@@ -1,19 +1,23 @@
 {
-  "name": "npm-modules-nodejs-express",
+  "name": "dni-playground",
   "version": "1.0.0",
   "description": "NPM modules, NodeJs Backaend with Express, CQRS API",
   "main": "index.js",
   "scripts": {
+    "dev": "concurrently --kill-others \"npm run dev --workspace=packages\\server\" \"npm run dev --workspace=packages\\client\"",
+    "build": "npm run build --workspaces --if-present",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Denis Kleber",
   "license": "ISC",
   "workspaces": [
-    "packages\\server"
+    "packages\\server",
+    "packages\\client"
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
+    "concurrently": "^7.6.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",

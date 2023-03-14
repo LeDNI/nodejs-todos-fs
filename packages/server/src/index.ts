@@ -14,7 +14,7 @@ dotenv.config({ path: "./config.env" });
   const storeTodos = new InMememoryTodoStore();
   await storeTodos.initialize();
 
-  const port = process.env.PORT || 3_000;
+  const port = process.env.PORT || 5_500;
   const expressApp = await getExpressApp();
 
   await setExpressApi(expressApp, store, storeTodos);
